@@ -1,1 +1,1574 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IND ESPORTS | Competitive Gaming</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #08090d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --bg: #08090d;
+    --card: #11131a;
+    --card2: #0d0f15;
+    --purple: #7c3aed;
+    --purple2: #a78bfa;
+    --border: #282044;
+    --muted: #9ca3af;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 72px;
+    background: rgba(5, 6, 10, 0.96);
+    border-bottom: 1px solid #20202c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.logo-icon {
+    color: var(--purple2);
+    font-size: 30px;
+}
+
+.logo-text span {
+    color: var(--purple2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #d5d5dd;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.nav-links a:hover {
+    color: var(--purple2);
+}
+
+.nav-links a.active {
+    color: #b56cff;
+    border-bottom: 2px solid #8b3dff;
+    padding-bottom: 8px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.login-btn,
+.register-btn {
+    padding: 10px 20px;
+    border-radius: 11px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.login-btn {
+    color: white;
+    background: transparent;
+    border: 1px solid #493476;
+}
+
+.register-btn {
+    color: white;
+    border: none;
+    background: linear-gradient(135deg, #7c3aed, #a020f0);
+    box-shadow: 0 0 25px rgba(124,58,237,.3);
+}
+
+.register-btn:hover,
+.login-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 390px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 55px 5%;
+    background:
+        radial-gradient(circle at 75% 40%, rgba(124,58,237,.45), transparent 35%),
+        radial-gradient(circle at 45% 70%, rgba(110,30,220,.22), transparent 35%),
+        linear-gradient(100deg, #07080d 15%, #120b22 55%, #08090d);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, transparent 30%, rgba(130,40,255,.08) 50%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.small-title {
+    letter-spacing: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #d8d3e5;
+    margin-bottom: 8px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: .95;
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: #a855f7;
+    text-shadow: 0 0 35px rgba(168,85,247,.4);
+}
+
+.tagline {
+    margin-top: 20px;
+    letter-spacing: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #eee;
+}
+
+.hero-info {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+    color: #bbb7c8;
+    font-size: 14px;
+}
+
+.hero-info span::before {
+    content: "◆";
+    color: #a855f7;
+    margin-right: 8px;
+    font-size: 8px;
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    background: linear-gradient(135deg,#7c3aed,#a020f0);
+    box-shadow: 0 0 35px rgba(124,58,237,.35);
+    transition: .25s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 50px rgba(124,58,237,.55);
+}
+
+/* Decorative soldier-style circle */
+.hero-art {
+    position: absolute;
+    right: 7%;
+    bottom: -90px;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 35%, #292335 0 18%, transparent 19%),
+        radial-gradient(circle at 50% 55%, #17141f 0 35%, transparent 36%),
+        radial-gradient(circle, #7628d9 0%, #341263 35%, transparent 70%);
+    opacity: .75;
+    filter: blur(.3px);
+}
+
+.hero-art::before {
+    content: "IND";
+    position: absolute;
+    font-size: 100px;
+    font-weight: 900;
+    color: rgba(255,255,255,.08);
+    top: 105px;
+    left: 105px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.container {
+    width: 92%;
+    max-width: 1450px;
+    margin: auto;
+}
+
+.section {
+    padding: 45px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.section-title .icon {
+    color: #a855f7;
+    font-size: 27px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+}
+
+.section-title p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.date {
+    color: #cfc9db;
+    font-size: 13px;
+}
+
+/* =========================
+   SCRIM CARDS
+========================= */
+
+.scrim-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.scrim-card {
+    background: linear-gradient(145deg,#11131b,#0c0e14);
+    border: 1px solid #43207d;
+    border-radius: 12px;
+    padding: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.scrim-card:hover {
+    transform: translateY(-5px);
+    border-color: #a855f7;
+    box-shadow: 0 15px 40px rgba(124,58,237,.15);
+}
+
+.scrim-card::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    right: -50px;
+    top: -50px;
+    border-radius: 50%;
+    background: rgba(124,58,237,.12);
+}
+
+.time {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.matches {
+    display: flex;
+    justify-content: space-between;
+    color: #b8b3c2;
+    font-size: 12px;
+    margin: 17px 0;
+}
+
+.slot-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 9px;
+}
+
+.slot-text span:last-child {
+    color: #b58aff;
+}
+
+.progress {
+    height: 8px;
+    background: #171a26;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg,#7c3aed,#bd5cff);
+    box-shadow: 0 0 14px rgba(168,85,247,.6);
+}
+
+.percent {
+    text-align: right;
+    color: #aaa5b5;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.view-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 10px;
+    border: 1px solid #a040ff;
+    background: transparent;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.view-btn:hover {
+    background: #7c3aed;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border: 1px solid #20263a;
+    border-radius: 10px;
+    background: #0d1017;
+    padding: 20px;
+}
+
+.feature {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 8px 25px;
+    border-right: 1px solid #282b39;
+}
+
+.feature:last-child {
+    border: none;
+}
+
+.feature-icon {
+    color: #a855f7;
+    font-size: 28px;
+}
+
+.feature h3 {
+    font-size: 13px;
+}
+
+.feature p {
+    color: #8d8b96;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+/* =========================
+   LOWER CONTENT
+========================= */
+
+.lower-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr .65fr;
+    gap: 18px;
+}
+
+.panel {
+    background: #0d1017;
+    border: 1px solid #252a40;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+.panel-header h3 {
+    font-size: 15px;
+}
+
+.panel-header a {
+    color: #a855f7;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.tournament {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #11141c;
+    border: 1px solid #202535;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.tournament-image {
+    width: 58px;
+    height: 48px;
+    border-radius: 6px;
+    background: linear-gradient(135deg,#29125a,#7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.tournament-info {
+    flex: 1;
+}
+
+.tournament-info h4 {
+    font-size: 12px;
+}
+
+.tournament-info p {
+    color: #858391;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.status {
+    border: 1px solid #7338d4;
+    color: #bb89ff;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 9px;
+}
+
+/* Leaderboard */
+
+.leader-head,
+.leader-row {
+    display: grid;
+    grid-template-columns: 40px 1fr 60px;
+    align-items: center;
+    padding: 10px;
+}
+
+.leader-head {
+    color: #7d7b87;
+    font-size: 10px;
+}
+
+.leader-row {
+    border-top: 1px solid #1b1e2b;
+    font-size: 11px;
+}
+
+.leader-row:first-of-type {
+    background: rgba(124,58,237,.1);
+    border-radius: 7px;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.team-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#7c3aed,#2c155c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.points {
+    text-align: right;
+    font-weight: 800;
+}
+
+/* Discord */
+
+.discord {
+    min-height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 70% 30%,rgba(124,58,237,.35),transparent 45%),
+        #11131b;
+    overflow: hidden;
+    position: relative;
+}
+
+.discord h2 {
+    font-size: 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.discord strong {
+    color: #b05cff;
+    font-size: 28px;
+    display: block;
+    font-style: italic;
+}
+
+.discord p {
+    color: #aaa7b2;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 14px 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.discord-btn {
+    background: linear-gradient(135deg,#7c3aed,#9b32ff);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 7px;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #20222d;
+    margin-top: 25px;
+    padding: 30px 5%;
+    background: #06070b;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-brand {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-brand .mini-logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.footer-brand p {
+    color: #8d8b94;
+    font-size: 10px;
+    max-width: 180px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #9d9aa6;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+    color: #a855f7;
+}
+
+.footer-bottom {
+    border-top: 1px solid #171922;
+    margin-top: 25px;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    color: #66636e;
+    font-size: 10px;
+}
+
+.footer-bottom strong {
+    color: #9d4cff;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: #b05cff;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.78);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 500px;
+    background: #10121a;
+    border: 1px solid #7138b8;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 0 60px rgba(124,58,237,.25);
+}
+
+.modal-box h2 {
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    color: #9996a3;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.close-modal {
+    float: right;
+    border: none;
+    background: none;
+    color: #aaa;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px) {
+
+    .scrim-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .features {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .feature:nth-child(2) {
+        border-right: none;
+    }
+
+    .feature:nth-child(3),
+    .feature:nth-child(4) {
+        margin-top: 15px;
+    }
+
+    .lower-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .discord {
+        grid-column: span 2;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+
+@media(max-width:750px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links,
+    .nav-buttons {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 50px 25px;
+    }
+
+    .hero-art {
+        right: -100px;
+        bottom: -70px;
+        width: 330px;
+        height: 330px;
+        opacity: .45;
+    }
+
+    .hero h1 {
+        font-size: 53px;
+    }
+
+    .hero-info {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .scrim-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        border-right: none;
+        border-bottom: 1px solid #282b39;
+        padding: 15px 10px;
+        margin: 0 !important;
+    }
+
+    .feature:last-child {
+        border-bottom: none;
+    }
+
+    .lower-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .discord {
+        grid-column: auto;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">♛</div>
+        <div class="logo-text">
+            IND <span>ESPORTS</span>
+        </div>
+    </div>
+
+    <nav class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#scrims">Scrims</a>
+        <a href="#tournaments">Tournaments</a>
+        <a href="#teams">Teams</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#rules">Rules</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <button class="login-btn">Login</button>
+        <button class="register-btn">Register</button>
+    </div>
+
+    <div class="mobile-menu">☰</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            WELCOME TO
+        </div>
+
+        <h1>
+            IND <span>ESPORTS</span>
+        </h1>
+
+        <div class="tagline">
+            COMPETE • IMPROVE • DOMINATE
+        </div>
+
+        <div class="hero-info">
+            <span>Daily Scrims</span>
+            <span>Tournaments</span>
+            <span>Competitive Community</span>
+        </div>
+
+        <a href="#scrims" class="hero-btn">
+            JOIN NOW →
+        </a>
+
+    </div>
+
+    <div class="hero-art"></div>
+
+</section>
+
+
+<!-- =========================
+     SCRIMS
+========================= -->
+
+<section class="section" id="scrims">
+
+<div class="container">
+
+    <div class="section-header">
+
+        <div class="section-title">
+            <div class="icon">◷</div>
+
+            <div>
+                <h2>TODAY'S SCRIMS</h2>
+                <p>Join the scrims, compete with the best and improve your game.</p>
+            </div>
+        </div>
+
+        <div class="date">
+            📅 Today's Schedule
+        </div>
+
+    </div>
+
+
+    <div class="scrim-grid">
+
+
+        <!-- 1 PM -->
+
+        <div class="scrim-card">
+
+            <div class="time">
+                ◷ 1:00 PM – 3:00 PM
+            </div>
+
+            <div class="matches">
+                <span>3 Matches</span>
+                <span>20–22 Teams</span>
+            </div>
+
+            <div class="slot-text">
+                <span>👥 14 / 22 Slots Filled</span>
+                <span>64%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:64%"></div>
+            </div>
+
+            <div class="percent">
+                8 slots remaining
+            </div>
+
+            <button class="view-btn"
+                    onclick="openScrim('1:00 PM – 3:00 PM','3 Matches','14 / 22 Slots Filled')">
+                View Details →
+            </button>
+
+        </div>
+
+
+        <!-- 3 PM -->
+
+        <div class="scrim-card">
+
+            <div class="time">
+                ◷ 3:00 PM – 5:00 PM
+            </div>
+
+            <div class="matches">
+                <span>3 Matches</span>
+                <span>20–22 Teams</span>
+            </div>
+
+            <div class="slot-text">
+                <span>👥 18 / 22 Slots Filled</span>
+                <span>82%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:82%"></div>
+            </div>
+
+            <div class="percent">
+                4 slots remaining
+            </div>
+
+            <button class="view-btn"
+                    onclick="openScrim('3:00 PM – 5:00 PM','3 Matches','18 / 22 Slots Filled')">
+                View Details →
+            </button>
+
+        </div>
+
+
+        <!-- 7 PM -->
+
+        <div class="scrim-card">
+
+            <div class="time">
+                ◷ 7:00 PM – 9:00 PM
+            </div>
+
+            <div class="matches">
+                <span>3 Matches</span>
+                <span>20–22 Teams</span>
+            </div>
+
+            <div class="slot-text">
+                <span>👥 20 / 22 Slots Filled</span>
+                <span>91%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:91%"></div>
+            </div>
+
+            <div class="percent">
+                2 slots remaining
+            </div>
+
+            <button class="view-btn"
+                    onclick="openScrim('7:00 PM – 9:00 PM','3 Matches','20 / 22 Slots Filled')">
+                View Details →
+            </button>
+
+        </div>
+
+
+        <!-- 9 PM -->
+
+        <div class="scrim-card">
+
+            <div class="time">
+                ◷ 9:00 PM – 10:00 PM
+            </div>
+
+            <div class="matches">
+                <span>3 Matches</span>
+                <span>20–22 Teams</span>
+            </div>
+
+            <div class="slot-text">
+                <span>👥 12 / 22 Slots Filled</span>
+                <span>55%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" style="width:55%"></div>
+            </div>
+
+            <div class="percent">
+                10 slots remaining
+            </div>
+
+            <button class="view-btn"
+                    onclick="openScrim('9:00 PM – 10:00 PM','3 Matches','12 / 22 Slots Filled')">
+                View Details →
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="section" style="padding-top:0">
+
+<div class="container">
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">🎮</div>
+
+            <div>
+                <h3>DAILY SCRIMS</h3>
+                <p>4 Timings | 12 Matches</p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">👥</div>
+
+            <div>
+                <h3>SUPPORTIVE COMMUNITY</h3>
+                <p>Make Friends & Grow</p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">🏆</div>
+
+            <div>
+                <h3>REAL COMPETITION</h3>
+                <p>Win, Learn, Improve</p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">⚡</div>
+
+            <div>
+                <h3>FAST & SMOOTH</h3>
+                <p>Easy to Join & Play</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     LOWER SECTION
+========================= -->
+
+<section class="section" id="tournaments">
+
+<div class="container">
+
+<div class="lower-grid">
+
+
+    <!-- TOURNAMENTS -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <h3>🏆 UPCOMING TOURNAMENTS</h3>
+
+            <a href="#">View All →</a>
+
+        </div>
+
+
+        <div class="tournament">
+
+            <div class="tournament-image">
+                ♛
+            </div>
+
+            <div class="tournament-info">
+
+                <h4>IND Esports Monthly Cup</h4>
+
+                <p>Upcoming Tournament</p>
+
+            </div>
+
+            <div class="status">
+                Upcoming
+            </div>
+
+        </div>
+
+
+        <div class="tournament">
+
+            <div class="tournament-image">
+                🎮
+            </div>
+
+            <div class="tournament-info">
+
+                <h4>Weekend Warrior Series</h4>
+
+                <p>Team Competition</p>
+
+            </div>
+
+            <div class="status">
+                Upcoming
+            </div>
+
+        </div>
+
+
+        <div class="tournament">
+
+            <div class="tournament-image">
+                🏆
+            </div>
+
+            <div class="tournament-info">
+
+                <h4>Clutch Masters</h4>
+
+                <p>Competitive Event</p>
+
+            </div>
+
+            <div class="status">
+                Upcoming
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LEADERBOARD -->
+
+    <div class="panel" id="leaderboard">
+
+        <div class="panel-header">
+
+            <h3>🏆 LEADERBOARD</h3>
+
+            <a href="#">View All →</a>
+
+        </div>
+
+
+        <div class="leader-head">
+
+            <span>#</span>
+            <span>Team Name</span>
+            <span style="text-align:right">Points</span>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <span>👑</span>
+
+            <div class="team">
+
+                <div class="team-logo">V</div>
+
+                Team Vortex
+
+            </div>
+
+            <div class="points">245</div>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <span>2</span>
+
+            <div class="team">
+
+                <div class="team-logo">R</div>
+
+                Royal Warriors
+
+            </div>
+
+            <div class="points">232</div>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <span>3</span>
+
+            <div class="team">
+
+                <div class="team-logo">G</div>
+
+                Ghost Gaming
+
+            </div>
+
+            <div class="points">210</div>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <span>4</span>
+
+            <div class="team">
+
+                <div class="team-logo">X</div>
+
+                Xtreme Esports
+
+            </div>
+
+            <div class="points">198</div>
+
+        </div>
+
+
+        <div class="leader-row">
+
+            <span>5</span>
+
+            <div class="team">
+
+                <div class="team-logo">D</div>
+
+                Dark Knights
+
+            </div>
+
+            <div class="points">176</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMMUNITY -->
+
+    <div class="panel discord" id="contact">
+
+        <h2>
+            JOIN OUR
+            <strong>COMMUNITY</strong>
+        </h2>
+
+        <p>
+            Get the latest updates, scrim alerts
+            and connect with other gamers.
+        </p>
+
+        <button class="discord-btn"
+                onclick="joinCommunity()">
+            Join Community →
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <div class="mini-logo">
+                IND<br>
+                <span style="color:#a855f7">ESPORTS</span>
+            </div>
+
+            <p>
+                More Than Just Scrims.<br>
+                It's a Community.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#scrims">Scrims</a>
+            <a href="#tournaments">Tournaments</a>
+            <a href="#leaderboard">Leaderboard</a>
+            <a href="#rules">Rules</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="socials">
+
+            <span>◉</span>
+            <span>◎</span>
+            <span>▶</span>
+            <span>𝕏</span>
+            <span>➤</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 IND ESPORTS. All rights reserved.
+        </span>
+
+        <strong>
+            PLAY TOGETHER • GROW TOGETHER ♛
+        </strong>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal" id="scrimModal">
+
+    <div class="modal-box">
+
+        <button class="close-modal"
+                onclick="closeModal()">
+            ×
+        </button>
+
+        <h2 id="modalTitle">
+            Scrim Details
+        </h2>
+
+        <p id="modalText"></p>
+
+        <br>
+
+        <p>
+            Select your team and continue to the
+            scrim registration process.
+        </p>
+
+        <button class="hero-btn"
+                style="border:none;cursor:pointer"
+                onclick="alert('Registration system will be connected later.')">
+            REGISTER TEAM →
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SCRIM MODAL
+========================= */
+
+function openScrim(time, matches, slots) {
+
+    document.getElementById("modalTitle").innerText =
+        time;
+
+    document.getElementById("modalText").innerText =
+        matches + " • " + slots;
+
+    document
+        .getElementById("scrimModal")
+        .classList.add("active");
+}
+
+
+function closeModal() {
+
+    document
+        .getElementById("scrimModal")
+        .classList.remove("active");
+}
+
+
+document
+    .getElementById("scrimModal")
+    .addEventListener("click", function(e) {
+
+        if (e.target === this) {
+            closeModal();
+        }
+
+    });
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+function joinCommunity() {
+
+    alert(
+        "Community link will be connected here."
+    );
+
+}
+
+
+/* =========================
+   REGISTER
+========================= */
+
+document
+    .querySelector(".register-btn")
+    .addEventListener("click", function() {
+
+        alert(
+            "Registration system will be connected later."
+        );
+
+    });
+
+
+/* =========================
+   LOGIN
+========================= */
+
+document
+    .querySelector(".login-btn")
+    .addEventListener("click", function() {
+
+        alert(
+            "Login system will be connected later."
+        );
+
+    });
+
+</script>
+
+</body>
+</html>
