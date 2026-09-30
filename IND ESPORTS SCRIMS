@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IND ESPORTS | Compete. Improve. Dominate.</title>
+
+<meta name="description"
+content="IND ESPORTS — A premium competitive gaming platform for players and teams.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --black: #080808;
+    --dark: #11100F;
+    --card: #171514;
+    --cream: #F5F1E8;
+    --gold: #C9A96E;
+    --bright-gold: #E4C98A;
+    --burgundy: #5A1825;
+    --muted: #9D968C;
+    --border: #302A24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 80% 10%, rgba(90,24,37,.18), transparent 30%),
+        radial-gradient(circle at 10% 35%, rgba(201,169,110,.07), transparent 25%),
+        var(--black);
+    color: var(--cream);
+    font-family: Inter, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin: auto;
+}
+
+/* NAVBAR */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8,8,8,.82);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(201,169,110,.12);
+}
+
+.nav-inner {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 27px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #cfc8bd;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--bright-gold);
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: 0;
+    color: var(--cream);
+    font-size: 26px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 9vw, 96px);
+    line-height: .95;
+    letter-spacing: -3px;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: var(--bright-gold);
+}
+
+.hero-slogan {
+    font-size: clamp(20px, 3vw, 31px);
+    font-weight: 700;
+    max-width: 720px;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.hero-text {
+    color: var(--muted);
+    max-width: 650px;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: 1px solid var(--gold);
+    padding: 14px 24px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #0b0907;
+}
+
+.btn-primary:hover {
+    background: var(--bright-gold);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    color: var(--cream);
+}
+
+.btn-outline:hover {
+    background: rgba(201,169,110,.1);
+    transform: translateY(-2px);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 100px 0;
+}
+
+.section-label {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(34px, 5vw, 52px);
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+/* CARDS */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.card {
+    background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.01));
+    border: 1px solid var(--border);
+    padding: 28px;
+    border-radius: 10px;
+    transition: .35s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(201,169,110,.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+
+.card-number {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* SCRIMS */
+
+.scrim-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.scrim {
+    position: relative;
+    overflow: hidden;
+}
+
+.scrim::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    right: -50px;
+    top: -50px;
+    background: rgba(90,24,37,.25);
+    border-radius: 50%;
+}
+
+.time {
+    color: var(--bright-gold);
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 8px;
+    color: #d6b985;
+    font-size: 10px;
+    letter-spacing: 2px;
+    border: 1px solid rgba(201,169,110,.3);
+    padding: 6px 9px;
+    border-radius: 3px;
+}
+
+.scrim-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.progress {
+    height: 4px;
+    background: #2a2724;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress span {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--bright-gold));
+}
+
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.small-btn {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--cream);
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.small-btn:hover {
+    border-color: var(--gold);
+    color: var(--bright-gold);
+}
+
+/* EVENT */
+
+.event-box {
+    margin-top: 45px;
+    padding: 50px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background:
+        linear-gradient(120deg, rgba(90,24,37,.18), transparent 50%),
+        var(--card);
+}
+
+.event-box h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    margin-bottom: 14px;
+}
+
+.event-box p {
+    color: var(--muted);
+    max-width: 650px;
+    line-height: 1.8;
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text {
+    color: var(--muted);
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 45px 0;
+    background: #060606;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-copy {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.78);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: min(550px, 100%);
+    background: #121110;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    background: none;
+    border: 0;
+    color: var(--muted);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.modal-box h2 {
+    font-family: "Playfair Display", serif;
+    margin-bottom: 15px;
+}
+
+.modal-box p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.team-list {
+    margin-top: 25px;
+    display: grid;
+    gap: 8px;
+}
+
+.team {
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: #d8d0c5;
+}
+
+/* MOBILE */
+
+@media(max-width: 800px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: #0b0b0b;
+        padding: 25px;
+        flex-direction: column;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .grid,
+    .scrim-grid,
+    .contact-grid,
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+    .hero {
+        min-height: 90vh;
+    }
+
+    .event-box {
+        padding: 30px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="container nav-inner">
+
+<a href="#home" class="logo">
+IND <span>ESPORTS</span>
+</a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#scrims">Scrims</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-content">
+
+<div class="eyebrow">WELCOME TO IND ESPORTS</div>
+
+<h1>
+DON'T WAIT<br>
+FOR THE <span>MOMENT.</span>
+</h1>
+
+<div class="hero-slogan">
+CREATE IT.
+</div>
+
+<p class="hero-text">
+Where competition meets ambition. Step into the arena,
+challenge yourself, improve your game and leave your mark.
+</p>
+
+<div class="hero-buttons">
+<a href="#scrims" class="btn btn-primary">
+ENTER THE ARENA
+</a>
+
+<a href="#about" class="btn btn-outline">
+EXPLORE IND ESPORTS
+</a>
+</div>
+
+</div>
+</section>
+
+
+<!-- WHY US -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">THE IND STANDARD</div>
+
+<h2 class="section-title">
+Built For Competitors.
+</h2>
+
+<p class="section-subtitle">
+A competitive environment designed for players and teams
+who take every match seriously.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-number">01 / COMPETE</div>
+<h3>Test Your Limits</h3>
+<p>
+Face competition, enter the arena and discover what you're
+really capable of.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">02 / IMPROVE</div>
+<h3>Every Match Matters</h3>
+<p>
+Every game is another opportunity to sharpen your skills
+and become better.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">03 / DOMINATE</div>
+<h3>Make Your Mark</h3>
+<p>
+Stay consistent, stay focused and build your name through
+performance.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- SCRIMS -->
+
+<section id="scrims">
+
+<div class="container">
+
+<div class="section-label">COMPETITIVE SESSIONS</div>
+
+<h2 class="section-title">Live Scrims</h2>
+
+<p class="section-subtitle">
+Choose your session and enter the arena.
+</p>
+
+<div class="scrim-grid">
+
+<!-- 1 -->
+
+<div class="card scrim">
+
+<div class="time">01 — 03 PM</div>
+
+<div class="status">OPEN FOR REGISTRATION</div>
+
+<div class="scrim-info">
+<span>Teams</span>
+<strong>0 / 22</strong>
+</div>
+
+<div class="progress">
+<span></span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-btn"
+onclick="showTeams('01 — 03 PM')">
+VIEW TEAMS
+</button>
+
+<button class="small-btn"
+onclick="showDetails('01 — 03 PM')">
+VIEW DETAILS
+</button>
+
+</div>
+</div>
+
+
+<!-- 2 -->
+
+<div class="card scrim">
+
+<div class="time">03 — 05 PM</div>
+
+<div class="status">OPEN FOR REGISTRATION</div>
+
+<div class="scrim-info">
+<span>Teams</span>
+<strong>0 / 22</strong>
+</div>
+
+<div class="progress">
+<span></span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-btn"
+onclick="showTeams('03 — 05 PM')">
+VIEW TEAMS
+</button>
+
+<button class="small-btn"
+onclick="showDetails('03 — 05 PM')">
+VIEW DETAILS
+</button>
+
+</div>
+</div>
+
+
+<!-- 3 -->
+
+<div class="card scrim">
+
+<div class="time">07 — 09 PM</div>
+
+<div class="status">OPEN FOR REGISTRATION</div>
+
+<div class="scrim-info">
+<span>Teams</span>
+<strong>0 / 22</strong>
+</div>
+
+<div class="progress">
+<span></span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-btn"
+onclick="showTeams('07 — 09 PM')">
+VIEW TEAMS
+</button>
+
+<button class="small-btn"
+onclick="showDetails('07 — 09 PM')">
+VIEW DETAILS
+</button>
+
+</div>
+</div>
+
+
+<!-- 4 -->
+
+<div class="card scrim">
+
+<div class="time">09 — 10 PM</div>
+
+<div class="status">OPEN FOR REGISTRATION</div>
+
+<div class="scrim-info">
+<span>Teams</span>
+<strong>0 / 22</strong>
+</div>
+
+<div class="progress">
+<span></span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-btn"
+onclick="showTeams('09 — 10 PM')">
+VIEW TEAMS
+</button>
+
+<button class="small-btn"
+onclick="showDetails('09 — 10 PM')">
+VIEW DETAILS
+</button>
+
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- EVENTS -->
+
+<section id="events">
+
+<div class="container">
+
+<div class="section-label">WHAT'S NEXT</div>
+
+<h2 class="section-title">Upcoming Events</h2>
+
+<div class="event-box">
+
+<h3>Something Bigger Is On The Way.</h3>
+
+<p>
+New events, bigger challenges and unforgettable battles
+are coming soon. Stay tuned and be ready to compete.
+</p>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container about">
+
+<div>
+
+<div class="section-label">OUR STORY</div>
+
+<h2 class="section-title">
+About IND ESPORTS
+</h2>
+
+</div>
+
+<div class="about-text">
+
+IND ESPORTS is built around one idea —
+<strong>competition should feel different.</strong>
+
+<br><br>
+
+We're creating a platform where players and teams
+can find competitive sessions, challenge themselves
+and turn every match into an opportunity to improve.
+
+<br><br>
+
+<strong>Compete. Improve. Dominate.</strong>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-label">NEED ASSISTANCE?</div>
+
+<h2 class="section-title">Contact Us</h2>
+
+<p class="section-subtitle">
+We're here to help with questions, issues and general support.
+</p>
+
+<div class="contact-grid">
+
+<div class="card contact-card">
+<div class="card-number">01</div>
+<h3>Support</h3>
+<p>Get help with your IND ESPORTS experience.</p>
+</div>
+
+<div class="card contact-card">
+<div class="card-number">02</div>
+<h3>Report an Issue</h3>
+<p>Found a problem? Let our team know.</p>
+</div>
+
+<div class="card contact-card">
+<div class="card-number">03</div>
+<h3>Rules & Guidelines</h3>
+<p>Read the rules before entering a competitive session.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+
+<div class="logo">
+IND <span>ESPORTS</span>
+</div>
+
+<div class="footer-copy">
+COMPETE • IMPROVE • DOMINATE
+</div>
+
+</div>
+
+<div class="footer-links">
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<a href="#scrims">Scrims</a>
+</div>
+
+<div class="footer-copy">
+© 2026 IND ESPORTS
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal()">×</button>
+
+<div id="modalContent"></div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.remove("active");
+}
+
+function showTeams(time) {
+
+    document.getElementById("modalContent").innerHTML = `
+        <div class="section-label">REGISTERED TEAMS</div>
+        <h2>${time}</h2>
+
+        <p>
+        No teams have registered for this session yet.
+        </p>
+
+        <div class="team-list">
+            <div class="team">01 — Waiting for registration</div>
+        </div>
+
+        <div style="margin-top:25px;">
+            <button class="small-btn" onclick="closeModal()">
+                ← BACK
+            </button>
+        </div>
+    `;
+
+    document.getElementById("modal").classList.add("active");
+}
+
+function showDetails(time) {
+
+    document.getElementById("modalContent").innerHTML = `
+        <div class="section-label">SCRIM DETAILS</div>
+
+        <h2>${time}</h2>
+
+        <p>
+        Competitive scrim session hosted by IND ESPORTS.
+        Check the session information before entering.
+        </p>
+
+        <div class="team-list">
+
+            <div class="team">
+                <strong>TEAM CAPACITY</strong><br>
+                22 Teams
+            </div>
+
+            <div class="team">
+                <strong>DROP</strong><br>
+                Drop information will be displayed here.
+            </div>
+
+            <div class="team">
+                <strong>RULES</strong><br>
+                Follow all IND ESPORTS competitive guidelines.
+            </div>
+
+        </div>
+
+        <div class="card-buttons">
+
+            <button class="small-btn" onclick="closeModal()">
+                ← BACK
+            </button>
+
+        </div>
+    `;
+
+    document.getElementById("modal").classList.add("active");
+}
+
+document.getElementById("modal").addEventListener("click", function(e) {
+
+    if(e.target === this) {
+        closeModal();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
