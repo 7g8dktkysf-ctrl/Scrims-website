@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IND ESPORTS | Premium Scrims</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root{
+    --bg:#080808;
+    --secondary:#11100F;
+    --card:#171514;
+    --text:#F5F1E8;
+    --gold:#C9A96E;
+    --bright:#E4C98A;
+    --burgundy:#5A1825;
+    --muted:#9D968C;
+    --border:#302A24;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,8,8,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:18px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:3px;
+    color:var(--bright);
+}
+
+.logo span{
+    color:var(--text);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:var(--muted);
+    font-size:14px;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    color:var(--bright);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+    background:
+        radial-gradient(circle at 50% 30%,rgba(90,24,37,.22),transparent 38%),
+        var(--bg);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    letter-spacing:5px;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(42px,8vw,82px);
+    line-height:1.03;
+    letter-spacing:-2px;
+}
+
+.hero h1 span{
+    color:var(--bright);
+}
+
+.hero p{
+    max-width:650px;
+    margin:25px auto;
+    color:var(--muted);
+    font-size:16px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.btn{
+    border:none;
+    padding:14px 25px;
+    border-radius:8px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:#080808;
+}
+
+.btn-primary:hover{
+    background:var(--bright);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    background:transparent;
+    color:var(--bright);
+    border:1px solid var(--gold);
+}
+
+.btn-outline:hover{
+    background:rgba(201,169,110,.08);
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    max-width:1150px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading .mini{
+    color:var(--gold);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:4px;
+}
+
+.section-heading h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    margin:8px 0;
+}
+
+.section-heading p{
+    color:var(--muted);
+    max-width:650px;
+    margin:auto;
+}
+
+/* ================= SCRIMS ================= */
+
+.scrim-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.scrim-card{
+    background:linear-gradient(145deg,#171514,#11100F);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+}
+
+.scrim-card:hover{
+    border-color:rgba(201,169,110,.55);
+    transform:translateY(-3px);
+}
+
+.scrim-top{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.scrim-time{
+    font-size:25px;
+    font-weight:800;
+    color:var(--bright);
+}
+
+.scrim-status{
+    font-size:11px;
+    color:var(--muted);
+    border:1px solid var(--border);
+    padding:5px 9px;
+    border-radius:20px;
+}
+
+.scrim-description{
+    color:var(--muted);
+    font-size:14px;
+    margin:12px 0 20px;
+}
+
+.scrim-meta{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.meta-box{
+    background:#0d0c0b;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:12px;
+}
+
+.meta-box small{
+    color:var(--muted);
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.meta-box strong{
+    color:var(--text);
+    font-size:14px;
+}
+
+.scrim-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.scrim-buttons button{
+    flex:1;
+    min-width:130px;
+}
+
+/* ================= TEAMS ================= */
+
+.team-drop-section{
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid var(--border);
+}
+
+.team-drop-title{
+    color:var(--bright);
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:8px;
+}
+
+.team-drop-text{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* ================= REGISTER ================= */
+
+.register-box{
+    max-width:720px;
+    margin:auto;
+    background:linear-gradient(145deg,#171514,#0f0e0d);
+    border:1px solid var(--gold);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 15px 50px rgba(0,0,0,.35);
+}
+
+.register-intro{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.register-intro h3{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+}
+
+.register-intro p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* PLANS */
+
+.plan-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.plan{
+    background:#0d0c0b;
+    border:1px solid var(--border);
+    border-radius:13px;
+    padding:20px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.plan:hover{
+    border-color:var(--gold);
+}
+
+.plan.selected{
+    border-color:var(--bright);
+    background:rgba(201,169,110,.07);
+    box-shadow:0 0 25px rgba(201,169,110,.08);
+}
+
+.plan-price{
+    color:var(--bright);
+    font-size:23px;
+    font-weight:800;
+}
+
+.plan-name{
+    color:var(--text);
+    font-weight:700;
+    margin-top:4px;
+}
+
+.plan-description{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
+}
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:7px;
+}
+
+input,
+select{
+    width:100%;
+    padding:14px;
+    border-radius:9px;
+    border:1px solid var(--border);
+    background:#080808;
+    color:var(--text);
+    outline:none;
+    font-size:14px;
+}
+
+input:focus,
+select:focus{
+    border-color:var(--gold);
+}
+
+.player-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.submit-btn{
+    width:100%;
+    margin-top:8px;
+    padding:16px;
+    background:var(--gold);
+    border:none;
+    color:#080808;
+    font-weight:800;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:var(--bright);
+}
+
+.success-box{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border:1px solid var(--gold);
+    border-radius:10px;
+    background:rgba(201,169,110,.05);
+    color:var(--bright);
+}
+
+/* ================= RULES ================= */
+
+.rules-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.rule{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px;
+}
+
+.rule-number{
+    color:var(--gold);
+    font-size:12px;
+    font-weight:800;
+}
+
+.rule h3{
+    margin:5px 0;
+    font-size:16px;
+}
+
+.rule p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-box{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    color:var(--muted);
+    line-height:1.9;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(0,0,0,.8);
+    backdrop-filter:blur(8px);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-content{
+    width:100%;
+    max-width:550px;
+    background:#11100F;
+    border:1px solid var(--gold);
+    border-radius:18px;
+    padding:30px;
+    max-height:85vh;
+    overflow:auto;
+}
+
+.modal-content h2{
+    color:var(--bright);
+    margin-bottom:15px;
+}
+
+.modal-content p{
+    color:var(--muted);
+    font-size:14px;
+    margin-bottom:12px;
+}
+
+.modal-close{
+    margin-top:15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    border-top:1px solid var(--border);
+    text-align:center;
+    padding:35px 20px;
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:1px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:78vh;
+    }
+
+    .scrim-grid{
+        grid-template-columns:1fr;
+    }
+
+    .rules-grid{
+        grid-template-columns:1fr;
+    }
+
+    .plan-grid{
+        grid-template-columns:1fr;
+    }
+
+    .player-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:65px 16px;
+    }
+
+    .register-box{
+        padding:22px;
+    }
+
+    .section-heading h2{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="navbar">
+
+        <div class="logo">
+            IND <span>ESPORTS</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#scrims">Scrims</a>
+            <a href="#register">Register</a>
+            <a href="#rules">Rules</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            PREMIUM ESPORTS SCRIMS
+        </div>
+
+        <h1>
+            DON'T WAIT FOR<br>
+            THE <span>MOMENT.</span>
+        </h1>
+
+        <p>
+            COMPETE • IMPROVE • DOMINATE
+            <br>
+            Where competition meets ambition.
+            Step in, prove yourself, and leave your mark.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#register" class="btn btn-primary">
+                REGISTER NOW
+            </a>
+
+            <a href="#scrims" class="btn btn-outline">
+                VIEW SCRIMS
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SCRIMS ================= -->
+
+<section id="scrims">
+
+    <div class="section-heading">
+
+        <div class="mini">
+            DAILY SCHEDULE
+        </div>
+
+        <h2>SCRIM SESSIONS</h2>
+
+        <p>
+            Choose your preferred session and check the available teams,
+            drops and session details.
+        </p>
+
+    </div>
+
+
+    <div class="scrim-grid">
+
+
+        <!-- 1-3 -->
+
+        <div class="scrim-card">
+
+            <div class="scrim-top">
+
+                <div class="scrim-time">
+                    1 – 3 PM
+                </div>
+
+                <div class="scrim-status">
+                    OPEN
+                </div>
+
+            </div>
+
+            <p class="scrim-description">
+                Afternoon competitive scrim session for teams looking
+                to practice rotations, fights and late-game decision making.
+            </p>
+
+            <div class="scrim-meta">
+
+                <div class="meta-box">
+                    <small>Teams</small>
+                    <strong>0 / 22</strong>
+                </div>
+
+                <div class="meta-box">
+                    <small>Session</small>
+                    <strong>Afternoon</strong>
+                </div>
+
+            </div>
+
+            <div class="team-drop-section">
+
+                <div class="team-drop-title">
+                    TEAM & THEIR DROPS
+                </div>
+
+                <div class="team-drop-text">
+                    Teams and their assigned drops will appear here
+                    once registrations are confirmed.
+                </div>
+
+            </div>
+
+            <div class="scrim-buttons">
+
+                <button class="btn btn-outline"
+                        onclick="openDetails('1 – 3 PM')">
+                    VIEW DETAILS
+                </button>
+
+                <button class="btn btn-primary"
+                        onclick="selectTiming('1 – 3 PM')">
+                    REGISTER NOW
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3-5 -->
+
+        <div class="scrim-card">
+
+            <div class="scrim-top">
+
+                <div class="scrim-time">
+                    3 – 5 PM
+                </div>
+
+                <div class="scrim-status">
+                    OPEN
+                </div>
+
+            </div>
+
+            <p class="scrim-description">
+                Prime afternoon practice session focused on team
+                coordination, rotations and controlled engagements.
+            </p>
+
+            <div class="scrim-meta">
+
+                <div class="meta-box">
+                    <small>Teams</small>
+                    <strong>0 / 22</strong>
+                </div>
+
+                <div class="meta-box">
+                    <small>Session</small>
+                    <strong>Afternoon</strong>
+                </div>
+
+            </div>
+
+            <div class="team-drop-section">
+
+                <div class="team-drop-title">
+                    TEAM & THEIR DROPS
+                </div>
+
+                <div class="team-drop-text">
+                    Teams and their assigned drops will appear here
+                    once registrations are confirmed.
+                </div>
+
+            </div>
+
+            <div class="scrim-buttons">
+
+                <button class="btn btn-outline"
+                        onclick="openDetails('3 – 5 PM')">
+                    VIEW DETAILS
+                </button>
+
+                <button class="btn btn-primary"
+                        onclick="selectTiming('3 – 5 PM')">
+                    REGISTER NOW
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 7-9 -->
+
+        <div class="scrim-card">
+
+            <div class="scrim-top">
+
+                <div class="scrim-time">
+                    7 – 9 PM
+                </div>
+
+                <div class="scrim-status">
+                    OPEN
+                </div>
+
+            </div>
+
+            <p class="scrim-description">
+                Evening competitive session designed for serious
+                teams preparing for high-pressure matches.
+            </p>
+
+            <div class="scrim-meta">
+
+                <div class="meta-box">
+                    <small>Teams</small>
+                    <strong>0 / 22</strong>
+                </div>
+
+                <div class="meta-box">
+                    <small>Session</small>
+                    <strong>Evening</strong>
+                </div>
+
+            </div>
+
+            <div class="team-drop-section">
+
+                <div class="team-drop-title">
+                    TEAM & THEIR DROPS
+                </div>
+
+                <div class="team-drop-text">
+                    Teams and their assigned drops will appear here
+                    once registrations are confirmed.
+                </div>
+
+            </div>
+
+            <div class="scrim-buttons">
+
+                <button class="btn btn-outline"
+                        onclick="openDetails('7 – 9 PM')">
+                    VIEW DETAILS
+                </button>
+
+                <button class="btn btn-primary"
+                        onclick="selectTiming('7 – 9 PM')">
+                    REGISTER NOW
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- 9-10 -->
+
+        <div class="scrim-card">
+
+            <div class="scrim-top">
+
+                <div class="scrim-time">
+                    9 – 10 PM
+                </div>
+
+                <div class="scrim-status">
+                    OPEN
+                </div>
+
+            </div>
+
+            <p class="scrim-description">
+                Late-night competitive session for teams wanting
+                focused one-hour practice and intense end-game action.
+            </p>
+
+            <div class="scrim-meta">
+
+                <div class="meta-box">
+                    <small>Teams</small>
+                    <strong>0 / 22</strong>
+                </div>
+
+                <div class="meta-box">
+                    <small>Session</small>
+                    <strong>Night</strong>
+                </div>
+
+            </div>
+
+            <div class="team-drop-section">
+
+                <div class="team-drop-title">
+                    TEAM & THEIR DROPS
+                </div>
+
+                <div class="team-drop-text">
+                    Teams and their assigned drops will appear here
+                    once registrations are confirmed.
+                </div>
+
+            </div>
+
+            <div class="scrim-buttons">
+
+                <button class="btn btn-outline"
+                        onclick="openDetails('9 – 10 PM')">
+                    VIEW DETAILS
+                </button>
+
+                <button class="btn btn-primary"
+                        onclick="selectTiming('9 – 10 PM')">
+                    REGISTER NOW
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REGISTER ================= -->
+
+<section id="register">
+
+    <div class="section-heading">
+
+        <div class="mini">
+            JOIN THE COMPETITION
+        </div>
+
+        <h2>REGISTER NOW</h2>
+
+        <p>
+            Select your scrim type, choose your timing and submit
+            your team details.
+        </p>
+
+    </div>
+
+
+    <div class="register-box">
+
+        <div class="register-intro">
+
+            <h3>Select Your Scrim</h3>
+
+            <p>
+                Choose the plan you want to register for.
+            </p>
+
+        </div>
+
+
+        <div class="plan-grid">
+
+            <div class="plan"
+                 onclick="selectPlan('SCRIMS',40,this)">
+
+                <div class="plan-price">
+                    ₹40
+                </div>
+
+                <div class="plan-name">
+                    SCRIMS
+                </div>
+
+                <div class="plan-description">
+                    Standard competitive scrim session.
+                </div>
+
+            </div>
+
+
+            <div class="plan"
+                 onclick="selectPlan('PRO SCRIMS',50,this)">
+
+                <div class="plan-price">
+                    ₹50
+                </div>
+
+                <div class="plan-name">
+                    PRO SCRIMS
+                </div>
+
+                <div class="plan-description">
+                    Premium competitive scrim session.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Scrim Timing
+            </label>
+
+            <select id="timing">
+
+                <option value="">
+                    Select Scrim Timing
+                </option>
+
+                <option>
+                    1 – 3 PM
+                </option>
+
+                <option>
+                    3 – 5 PM
+                </option>
+
+                <option>
+                    7 – 9 PM
+                </option>
+
+                <option>
+                    9 – 10 PM
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Team Name
+            </label>
+
+            <input
+                id="teamName"
+                type="text"
+                placeholder="Enter your team name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Captain Name
+            </label>
+
+            <input
+                id="captainName"
+                type="text"
+                placeholder="Enter captain name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Contact / Telegram
+            </label>
+
+            <input
+                id="contact"
+                type="text"
+                placeholder="Enter contact or Telegram username"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Player Details
+            </label>
+
+            <div class="player-grid">
+
+                <input
+                    id="player1"
+                    type="text"
+                    placeholder="Player 1"
+                >
+
+                <input
+                    id="player2"
+                    type="text"
+                    placeholder="Player 2"
+                >
+
+                <input
+                    id="player3"
+                    type="text"
+                    placeholder="Player 3"
+                >
+
+                <input
+                    id="player4"
+                    type="text"
+                    placeholder="Player 4"
+                >
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="submit-btn"
+            onclick="submitRegistration()">
+
+            SUBMIT REGISTRATION
+
+        </button>
+
+
+        <div
+            class="success-box"
+            id="successBox">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RULES ================= -->
+
+<section id="rules">
+
+    <div class="section-heading">
+
+        <div class="mini">
+            PLAY FAIR
+        </div>
+
+        <h2>SCRIM RULES</h2>
+
+        <p>
+            Every team is expected to follow these rules
+            throughout the session.
+        </p>
+
+    </div>
+
+
+    <div class="rules-grid">
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                RULE 01
+            </div>
+
+            <h3>No Hacks or Cheats</h3>
+
+            <p>
+                Any use of hacks, cheats, scripts, exploits or
+                unauthorized third-party software is strictly prohibited.
+            </p>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                RULE 02
+            </div>
+
+            <h3>Player POV Recording</h3>
+
+            <p>
+                All participating players must record their POV
+                throughout the scrim. POV recordings may be requested
+                for verification or dispute review.
+            </p>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                RULE 03
+            </div>
+
+            <h3>Self-Aid & Emergency Pickup</h3>
+
+            <p>
+                Players should follow the designated self-aid and
+                emergency-pickup procedure communicated by the
+                organizers whenever required.
+            </p>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                RULE 04
+            </div>
+
+            <h3>Fair Play</h3>
+
+            <p>
+                Teams must compete fairly and respect all other
+                participating players and organizers.
+            </p>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                RULE 05
+            </div>
+
+            <h3>Team Information</h3>
+
+            <p>
+                Teams must submit accurate player and captain
+                information before participating.
+            </p>
+
+        </div>
+
+
+        <div class="rule">
+
+            <div class="rule-number">
+                RULE 06
+            </div>
+
+            <h3>Organizer Decision</h3>
+
+            <p>
+                Match-related disputes and rule violations will be
+                reviewed by the organizers based on available evidence.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-heading">
+
+        <div class="mini">
+            OUR IDENTITY
+        </div>
+
+        <h2>ABOUT IND ESPORTS</h2>
+
+    </div>
+
+    <div class="about-box">
+
+        IND ESPORTS is built around one idea —
+        competition should feel different.
+
+        <br><br>
+
+        We aim to create a clean, organized and competitive
+        environment where teams can practice, improve their
+        coordination and compete against serious players.
+
+        <br><br>
+
+        <strong style="color:#E4C98A;">
+            COMPETE • IMPROVE • DOMINATE
+        </strong>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 IND ESPORTS
+    <br><br>
+    COMPETE • IMPROVE • DOMINATE
+
+</footer>
+
+
+<!-- ================= DETAILS MODAL ================= -->
+
+<div class="modal" id="detailsModal">
+
+    <div class="modal-content">
+
+        <h2 id="modalTitle">
+            Scrim Details
+        </h2>
+
+        <p>
+            This session is designed for organized competitive
+            practice between participating teams.
+        </p>
+
+        <p>
+            Teams should be ready before the scheduled start time.
+            Players are expected to maintain their POV recordings
+            throughout the session.
+        </p>
+
+        <p>
+            All participants must follow the official rules,
+            maintain fair play and cooperate with organizers
+            during any dispute review.
+        </p>
+
+        <p>
+            <strong style="color:#E4C98A;">
+                Selected Session:
+            </strong>
+            <span id="modalTime"></span>
+        </p>
+
+        <button
+            class="btn btn-primary modal-close"
+            onclick="closeDetails()">
+
+            BACK
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let selectedPlan = "";
+let selectedPrice = "";
+
+
+/* ================= PLAN ================= */
+
+function selectPlan(plan,price,element){
+
+    selectedPlan = plan;
+    selectedPrice = price;
+
+    document.querySelectorAll(".plan").forEach(function(item){
+
+        item.classList.remove("selected");
+
+    });
+
+    element.classList.add("selected");
+
+}
+
+
+/* ================= TIMING ================= */
+
+function selectTiming(time){
+
+    document.getElementById("timing").value = time;
+
+    document.getElementById("register")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* ================= DETAILS ================= */
+
+function openDetails(time){
+
+    document.getElementById("modalTime").innerText = time;
+
+    document.getElementById("modalTitle").innerText =
+        time + " — SCRIM DETAILS";
+
+    document.getElementById("detailsModal").style.display =
+        "flex";
+
+}
+
+
+function closeDetails(){
+
+    document.getElementById("detailsModal").style.display =
+        "none";
+
+}
+
+
+window.onclick = function(event){
+
+    const modal =
+        document.getElementById("detailsModal");
+
+    if(event.target === modal){
+
+        closeDetails();
+
+    }
+
+}
+
+
+/* ================= REGISTER ================= */
+
+function submitRegistration(){
+
+    const timing =
+        document.getElementById("timing").value;
+
+    const team =
+        document.getElementById("teamName").value.trim();
+
+    const captain =
+        document.getElementById("captainName").value.trim();
+
+    const contact =
+        document.getElementById("contact").value.trim();
+
+    const p1 =
+        document.getElementById("player1").value.trim();
+
+    const p2 =
+        document.getElementById("player2").value.trim();
+
+    const p3 =
+        document.getElementById("player3").value.trim();
+
+    const p4 =
+        document.getElementById("player4").value.trim();
+
+
+    if(!selectedPlan){
+
+        alert("Please select SCRIMS or PRO SCRIMS.");
+
+        return;
+
+    }
+
+
+    if(!timing){
+
+        alert("Please select a scrim timing.");
+
+        return;
+
+    }
+
+
+    if(!team || !captain || !contact){
+
+        alert("Please fill Team Name, Captain Name and Contact.");
+
+        return;
+
+    }
+
+
+    if(!p1 || !p2 || !p3 || !p4){
+
+        alert("Please enter all 4 player names.");
+
+        return;
+
+    }
+
+
+    const success =
+        document.getElementById("successBox");
+
+
+    success.style.display = "block";
+
+
+    success.innerHTML = `
+
+        <strong>
+            REGISTRATION DETAILS RECEIVED
+        </strong>
+
+        <br><br>
+
+        Plan:
+        <strong>
+            ₹${selectedPrice} — ${selectedPlan}
+        </strong>
+
+        <br>
+
+        Timing:
+        ${timing}
+
+        <br>
+
+        Team:
+        ${team}
+
+        <br>
+
+        Captain:
+        ${captain}
+
+        <br>
+
+        Players:
+        ${p1}, ${p2}, ${p3}, ${p4}
+
+        <br><br>
+
+        <span style="color:#9D968C;">
+            Registration submitted successfully.
+            Payment processing will be connected separately.
+        </span>
+
+    `;
+
+
+    success.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
